@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <% import Todo.Router.Helpers %>
     <div class="container">
       <header class="header">
         <nav role="navigation">
