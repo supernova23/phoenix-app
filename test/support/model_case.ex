@@ -1,4 +1,4 @@
-defmodule Todo.ModelCase do
+defmodule Chat2.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,16 +16,18 @@ defmodule Todo.ModelCase do
 
   using do
     quote do
-      alias Todo.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-      import Todo.ModelCase
+      alias Chat2.Repo
+
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
+      import Chat2.ModelCase
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Todo.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(Chat2.Repo, [])
     end
 
     :ok

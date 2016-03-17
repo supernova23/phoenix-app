@@ -1,3 +1,3 @@
-defmodule Todo.PageViewTest do
-  use Todo.ConnCase, async: true
+defmodule Chat2.PageViewTest do
+  use Chat2.ConnCase, async: true
 end

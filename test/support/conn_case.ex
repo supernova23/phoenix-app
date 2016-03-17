@@ -1,4 +1,4 @@
-defmodule Todo.ConnCase do
+defmodule Chat2.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,20 +20,21 @@ defmodule Todo.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Todo.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
+      alias Chat2.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
 
-      import Todo.Router.Helpers
+      import Chat2.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint Todo.Endpoint
+      @endpoint Chat2.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Todo.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(Chat2.Repo, [])
     end
 
     {:ok, conn: Phoenix.ConnTest.conn()}

@@ -1,12 +1,12 @@
-defmodule Todo.Web do
+defmodule Chat2.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Todo.Web, :controller
-      use Todo.Web, :view
+      use Chat2.Web, :controller
+      use Chat2.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule Todo.Web do
     quote do
       use Phoenix.Controller
 
-      alias Todo.Repo
+      alias Chat2.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
 
-      import Todo.Router.Helpers
-      import Todo.Gettext
+      import Chat2.Router.Helpers
+      import Chat2.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule Todo.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Todo.Router.Helpers
-      import Todo.ErrorHelpers
-      import Todo.Gettext
+      import Chat2.Router.Helpers
+      import Chat2.ErrorHelpers
+      import Chat2.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule Todo.Web do
     quote do
       use Phoenix.Channel
 
-      alias Todo.Repo
+      alias Chat2.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]
-      import Todo.Gettext
+      import Chat2.Gettext
     end
   end
 

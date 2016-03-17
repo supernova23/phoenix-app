@@ -1,4 +1,0 @@
-<div class="jumbotron">
-	<h2> Hello world, from <%= @message %> !</h2>
-	<a href="<%= page_path(@conn, :index) %>">retour</a>
-</div>

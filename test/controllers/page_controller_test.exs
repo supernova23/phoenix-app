@@ -1,5 +1,5 @@
-defmodule Todo.PageControllerTest do
-  use Todo.ConnCase
+defmodule Chat2.PageControllerTest do
+  use Chat2.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

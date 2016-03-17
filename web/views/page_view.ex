@@ -1,3 +1,3 @@
-defmodule Todo.PageView do
-  use Todo.Web, :view
+defmodule Chat2.PageView do
+  use Chat2.Web, :view
 end

@@ -6,12 +6,12 @@
 use Mix.Config
 
 # Configures the endpoint
-config :todo, Todo.Endpoint,
+config :chat2, Chat2.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
-  secret_key_base: "hxfhkJ1tdcD4NGdFIVCAydSksYOLdo+IP/ytjcmJsmLAvT9MqM084nliUt18tLn9",
+  secret_key_base: "C34R0O4dStkSjCf8+eBnrvVXG0hv3KsLRIDXb33P5XP8Sw7aj48tHo5mvSfNZb49",
   render_errors: [accepts: ~w(html json)],
-  pubsub: [name: Todo.PubSub,
+  pubsub: [name: Chat2.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

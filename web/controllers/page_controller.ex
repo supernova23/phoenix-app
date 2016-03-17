@@ -1,5 +1,5 @@
-defmodule Todo.PageController do
-  use Todo.Web, :controller
+defmodule Chat2.PageController do
+  use Chat2.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

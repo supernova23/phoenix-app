@@ -1,14 +1,14 @@
-defmodule Todo.Endpoint do
-  use Phoenix.Endpoint, otp_app: :todo
+defmodule Chat2.Endpoint do
+  use Phoenix.Endpoint, otp_app: :chat2
 
-  socket "/socket", Todo.UserSocket
+  socket "/socket", Chat2.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :todo, gzip: false,
+    at: "/", from: :chat2, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -32,8 +32,8 @@ defmodule Todo.Endpoint do
 
   plug Plug.Session,
     store: :cookie,
-    key: "_todo_key",
-    signing_salt: "VH559JM5"
+    key: "_chat2_key",
+    signing_salt: "DrzvZP8O"
 
-  plug Todo.Router
+  plug Chat2.Router
 end

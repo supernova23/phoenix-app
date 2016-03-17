@@ -1,5 +1,5 @@
-defmodule Todo.Router do
-  use Todo.Web, :router
+defmodule Chat2.Router do
+  use Chat2.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,16 +13,17 @@ defmodule Todo.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Todo do
+  scope "/", Chat2 do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/hello", MyController, :index
-    get "/hello/:message", MyController, :show
+    get "/register", UserController, :new, as: "register"
+    resources "/users", UserController, except: [:show, :new, :delete]
+    get "/login", SessionController, :login, as: "login"
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Todo do
+  # scope "/api", Chat2 do
   #   pipe_through :api
   # end
 end

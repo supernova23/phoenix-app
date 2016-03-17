@@ -1,3 +1,3 @@
-defmodule Todo.LayoutViewTest do
-  use Todo.ConnCase, async: true
+defmodule Chat2.LayoutViewTest do
+  use Chat2.ConnCase, async: true
 end

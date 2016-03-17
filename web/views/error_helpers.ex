@@ -1,8 +1,8 @@
-defmodule Todo.ErrorHelpers do
+defmodule Chat2.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
-  
+
   use Phoenix.HTML
 
   @doc """
@@ -13,7 +13,7 @@ defmodule Todo.ErrorHelpers do
       content_tag :span, translate_error(error), class: "help-block"
     end
   end
-  
+
   @doc """
   Translates an error message using gettext.
   """
@@ -26,10 +26,10 @@ defmodule Todo.ErrorHelpers do
     #
     #     dngettext "errors", "1 file", "%{count} files", count
     #
-    Gettext.dngettext(Todo.Gettext, "errors", msg, msg, opts[:count], opts)
+    Gettext.dngettext(Chat2.Gettext, "errors", msg, msg, opts[:count], opts)
   end
 
   def translate_error(msg) do
-    Gettext.dgettext(Todo.Gettext, "errors", msg)
+    Gettext.dgettext(Chat2.Gettext, "errors", msg)
   end
 end

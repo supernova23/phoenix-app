@@ -1,8 +1,8 @@
-defmodule Todo.Mixfile do
+defmodule Chat2.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :todo,
+    [app: :chat2,
      version: "0.0.1",
      elixir: "~> 1.0",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,7 +17,7 @@ defmodule Todo.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Todo, []},
+    [mod: {Chat2, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
@@ -30,10 +30,10 @@ defmodule Todo.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.1.1"},
-     {:phoenix_ecto, "~> 2.0"},
+    [{:phoenix, "~> 1.1.4"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.3"},
+     {:phoenix_ecto, "~> 2.0"},
+     {:phoenix_html, "~> 2.4"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"}]

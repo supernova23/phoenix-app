@@ -1,4 +1,0 @@
-<div class="jumbotron">
-	<h2> Hello world, from phoenix !</h2>
-	<a href='<%= my_path(@conn, :show, "younes", age: 15) %>'>afficher</a>
-</div>

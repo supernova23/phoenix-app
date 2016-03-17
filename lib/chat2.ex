@@ -1,4 +1,4 @@
-defmodule Todo do
+defmodule Chat2 do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -8,23 +8,23 @@ defmodule Todo do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(Todo.Endpoint, []),
+      supervisor(Chat2.Endpoint, []),
       # Start the Ecto repository
-      supervisor(Todo.Repo, []),
+      supervisor(Chat2.Repo, []),
       # Here you could define other workers and supervisors as children
-      # worker(Todo.Worker, [arg1, arg2, arg3]),
+      # worker(Chat2.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Todo.Supervisor]
+    opts = [strategy: :one_for_one, name: Chat2.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    Todo.Endpoint.config_change(changed, removed)
+    Chat2.Endpoint.config_change(changed, removed)
     :ok
   end
 end

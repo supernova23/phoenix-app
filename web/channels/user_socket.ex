@@ -1,8 +1,8 @@
-defmodule Todo.UserSocket do
+defmodule Chat2.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Todo.RoomChannel
+  # channel "rooms:*", Chat2.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule Todo.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     Todo.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     Chat2.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :todo, Todo.Endpoint,
+config :chat2, Chat2.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :todo, Todo.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :todo, Todo.Repo,
+config :chat2, Chat2.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "todo_test",
+  database: "chat2_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

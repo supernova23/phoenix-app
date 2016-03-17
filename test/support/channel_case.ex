@@ -1,4 +1,4 @@
-defmodule Todo.ChannelCase do
+defmodule Chat2.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,19 +20,20 @@ defmodule Todo.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias Todo.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
+      alias Chat2.Repo
+      import Ecto
+      import Ecto.Changeset
+      import Ecto.Query, only: [from: 1, from: 2]
 
 
       # The default endpoint for testing
-      @endpoint Todo.Endpoint
+      @endpoint Chat2.Endpoint
     end
   end
 
   setup tags do
     unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Todo.Repo, [])
+      Ecto.Adapters.SQL.restart_test_transaction(Chat2.Repo, [])
     end
 
     :ok

@@ -1,5 +1,5 @@
-defmodule Todo.ErrorView do
-  use Todo.Web, :view
+defmodule Chat2.ErrorView do
+  use Chat2.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"
