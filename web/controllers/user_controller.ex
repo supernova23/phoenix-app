@@ -1,7 +1,7 @@
+require Logger
 defmodule Chat2.UserController do
   use Chat2.Web, :controller
-
-  alias Chat2.User
+  alias Chat2.Password
 
   plug :scrub_params, "user" when action in [:create, :update]
 
@@ -17,7 +17,6 @@ defmodule Chat2.UserController do
 
   def create(conn, %{"user" => user_params}) do
     changeset = User.changeset(%User{}, user_params)
-
     case Repo.insert(changeset) do
       {:ok, _user} ->
         conn
@@ -41,7 +40,7 @@ defmodule Chat2.UserController do
 
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Repo.get!(User, id)
-    changeset = User.changeset(user, user_params)
+    changeset = User.changeset(user, user_params) |> Password.generate_password
 
     case Repo.update(changeset) do
       {:ok, user} ->

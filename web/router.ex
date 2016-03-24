@@ -17,9 +17,12 @@ defmodule Chat2.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/register", UserController, :new, as: "register"
-    resources "/users", UserController, except: [:show, :new, :delete]
-    get "/login", SessionController, :login, as: "login"
+    get "/register", UserController, :new
+    resources "/users", UserController
+    resources "/posts", PostController
+    get "/login",     SessionController, :login
+    post "/login",    SessionController, :create
+    delete "/logout",  SessionController, :logout
   end
 
   # Other scopes may use custom stacks.

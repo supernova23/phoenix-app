@@ -30,6 +30,7 @@ defmodule Chat2.Web do
     quote do
       use Phoenix.Controller
 
+      alias Chat2.User
       alias Chat2.Repo
       import Ecto
       import Ecto.Query, only: [from: 1, from: 2]

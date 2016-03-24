@@ -32,11 +32,8 @@ config :logger, :console, format: "[$level] $message\n"
 # and calculating stacktraces is usually expensive.
 config :phoenix, :stacktrace_depth, 20
 
+
+import_config "dev.secret.exs"
 # Configure your database
-config :chat2, Chat2.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "supernova",
-  password: "back31track",
-  database: "chat_dev",
-  hostname: "localhost",
-  pool_size: 10
+
+config :comeonin, bcrypt_log_rounds: 6

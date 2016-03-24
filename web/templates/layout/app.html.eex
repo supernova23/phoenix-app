@@ -17,6 +17,11 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <%= if user = current_user(@conn) do %>
+              Logged in as <strong> <%= user.username %> </strong>
+            <%= else %>
+              <li><%= link "login", to: session_path(@conn, :login) %></li>
+            <% end %>
           </ul>
         </nav>
         <span class="logo"></span>
