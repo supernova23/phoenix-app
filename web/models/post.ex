@@ -6,6 +6,9 @@ defmodule Chat2.Post do
     field :body, :string
 
     timestamps
+
+    #relations
+    belongs_to :user, Chat2.User
   end
 
   @required_fields ~w(title body)

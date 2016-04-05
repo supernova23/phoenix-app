@@ -11,6 +11,9 @@ defmodule Chat2.User do
 
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
+
+    #relations
+    has_many :posts, Chat2.Post
   end
 
   @required_fields ~w(username email password password_confirmation) #password_digest

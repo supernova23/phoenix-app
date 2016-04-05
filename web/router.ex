@@ -18,11 +18,11 @@ defmodule Chat2.Router do
 
     get "/", PageController, :index
     get "/register", UserController, :new
-    resources "/users", UserController
-    resources "/posts", PostController
-    get "/login",     SessionController, :login
-    post "/login",    SessionController, :create
-    delete "/logout",  SessionController, :logout
+    resources "/users", UserController do
+      resources "/posts", PostController
+    end
+    get "/login", SessionController, :login
+    resources "/sessions", SessionController, only: [:create, :delete]
   end
 
   # Other scopes may use custom stacks.
